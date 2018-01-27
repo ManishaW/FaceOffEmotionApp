@@ -6,6 +6,8 @@ Build/*
 Obj/*
 WebBuild/*
 WindowsBuild/*
+Assets/Affdex/*
+Assets/StreamingAssets/*
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
