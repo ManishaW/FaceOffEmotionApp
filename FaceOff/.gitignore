@@ -9,6 +9,9 @@ WindowsBuild/*
 Assets/Affdex/*
 Assets/StreamingAssets/*
 
+Affdex.meta
+StreamingAssets.meta
+
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
