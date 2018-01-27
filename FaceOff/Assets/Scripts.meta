@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 10a205b51134a42468ec6f3dfe9bf33b
-labels:
-- Affectiva
-- Affdex
-- EmotionEnable
-timeCreated: 1444242343
+guid: 3a76a7b7f33dc3d4c900fb52de0c7a27
+folderAsset: yes
+timeCreated: 1517083665
 licenseType: Free
 DefaultImporter:
   userData: 
