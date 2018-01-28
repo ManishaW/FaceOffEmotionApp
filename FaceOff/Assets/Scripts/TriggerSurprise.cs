@@ -25,8 +25,6 @@ public class TriggerSurprise : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		if (textArea.text.Equals(expectedResult)) {
 			Debug.Log ("It's in bounds! It's" + textArea.text);
-
-			Destroy (col.gameObject);
 			perfectAnim.enabled = true;
 			perfectAnim.GetComponent<Animation> ().Play();
 			
