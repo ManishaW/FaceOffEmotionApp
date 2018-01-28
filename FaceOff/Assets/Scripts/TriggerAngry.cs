@@ -21,8 +21,8 @@ public class TriggerAngry : MonoBehaviour {
 		playerScore = GameObject.Find("playerScore").GetComponent<Score> ();
 		//score = GameObject.FindGameObjectWithTag ("score").GetComponent<Text> ();
 	//	playerScore = GameObject.Find("playerScore").GetComponent<Score> ();
-		score = GameObject.FindGameObjectWithTag ("score").GetComponent<Text> ();
-		playerScore = score.GetComponent<Score> ();
+	//	score = GameObject.FindGameObjectWithTag ("score").GetComponent<Text> ();
+		playerScore = GameObject.FindGameObjectWithTag ("score").GetComponent<Score> ();
 	}
 
 	// Update is called once per frame
