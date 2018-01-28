@@ -12,7 +12,7 @@ public class TriggerAngry : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
-		playerScore = GameObject.FindGameObjectWithTag ("score").GetComponent<Score> ();
+		playerScore = GameObject.Find("playerScore").GetComponent<Score> ();
 
 	}
 
