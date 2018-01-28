@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Score : NetworkBehaviour {
 
 
-//	[SyncVar(hook = "addScore")]
+	[SyncVar(hook = "addScore")]
 	public int score = 0;
 
 	Text score1;
@@ -29,21 +29,21 @@ public class Score : NetworkBehaviour {
 		score += s;
 	//	score1.text = "Score: " + score;
 
-	//	CmdScoreUp (score);
+		CmdScoreUp (score);
 	}
 
-//	[Command]
-//	public void CmdScoreUp(int s){
-//		RpcScoreUp (s);
-//	}
+[Command]
+	public void CmdScoreUp(int s){
+		RpcScoreUp (s);
+	}
 
-//	[ClientRpc]
-//	public void RpcScoreUp(int s){
+	[ClientRpc]
+	public void RpcScoreUp(int s){
 
-//		if (!isLocalPlayer) {
-//			score = s;
+		if (!isLocalPlayer) {
+			score = s;
 ///			score2.text = s.ToString ();
-//		}
-//	}
+		}
+	}
 
 }
