@@ -13,10 +13,10 @@ public class EmojiFall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		float randTime = Random.Range (3, 7);
-		InvokeRepeating ("createEmoji", 5, randTime);
-	}
+		//float randTime = Random.Range (1, 3);
+		InvokeRepeating ("createEmoji", 5, Random.Range(2, 5));
 	
+	}
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(Vector3.down * Time.deltaTime);
