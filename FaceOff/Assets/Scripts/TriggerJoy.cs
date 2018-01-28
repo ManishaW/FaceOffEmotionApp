@@ -9,10 +9,14 @@ public class TriggerJoy : MonoBehaviour {
 	private string expectedResult = "Joy";
 	Text textArea;
 	Text perfectAnim;
+	private Score playerScore; 
 
 	// Use this for initialization
 	void Start () {
 		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
+		GameObject playerScoreObject = GameObject.FindWithTag("score");
+		playerScore = playerScoreObject.GetComponent<Score>();
+
 		perfectAnim= GameObject.Find ("textPerfect").GetComponent<Text> ();
 		perfectAnim.enabled = false;
 	}
@@ -24,9 +28,9 @@ public class TriggerJoy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		if (textArea.text.Equals(expectedResult)) {
-			Debug.Log ("It's in bounds! It's" + textArea.text);
 			perfectAnim.enabled = true;
 			perfectAnim.GetComponent<Animation> ().Play();
+			playerScore.addScore (10);
 		}
 	}
 }

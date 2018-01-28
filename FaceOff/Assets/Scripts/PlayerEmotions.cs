@@ -33,6 +33,7 @@ public class PlayerEmotions : ImageResultsListener {
 
 			Text textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
 			textArea.text = emotions[maxIndex].ToString();
+			Debug.Log (emotions [maxIndex].ToString ());
 			
 		}
 	}

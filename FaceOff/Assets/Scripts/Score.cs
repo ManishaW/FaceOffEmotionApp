@@ -4,22 +4,16 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class Score : NetworkBehaviour {
-
-
-	[SyncVar(hook = "addScore")]
-	public int score = 0;
-
+public class Score : MonoBehaviour {
+	public int score;
 	Text score1;
-	//Text score2;
-
 
 	// Use this for initialization
 	void Start () {
+		score = 0;
 		score1 = GetComponent<Text> ();
-		score1.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform,false);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		score1.text = "Score: " + score;
@@ -27,23 +21,5 @@ public class Score : NetworkBehaviour {
 
 	public void addScore(int s){
 		score += s;
-	//	score1.text = "Score: " + score;
-
-		CmdScoreUp (score);
 	}
-
-[Command]
-	public void CmdScoreUp(int s){
-		RpcScoreUp (s);
-	}
-
-	[ClientRpc]
-	public void RpcScoreUp(int s){
-
-		if (!isLocalPlayer) {
-			score = s;
-///			score2.text = s.ToString ();
-		}
-	}
-
 }
