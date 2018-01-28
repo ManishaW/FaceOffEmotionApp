@@ -33,12 +33,15 @@ public class PlayerEmotions : ImageResultsListener {
 			}
 
 			result = emotions [maxIndex];
-			
+			Debug.Log ("1111" + result);
+
 		}
 	}
 
 	public Emotions getResult(){
+		Debug.Log ("0000" + result);
 		return result; 
+
 	}
 
 

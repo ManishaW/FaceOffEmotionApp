@@ -23,7 +23,6 @@ public class EmojiFall : MonoBehaviour {
 	}
 
 	void createEmoji(){
-		Debug.Log ("drop emoji like its hot");
 		int rand = Random.Range(1, 16);
 		position_index = (position_index + rand) % 4;
 		string emoji = emojiTypes [position_index];
