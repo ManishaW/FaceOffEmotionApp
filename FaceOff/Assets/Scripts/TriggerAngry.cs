@@ -9,6 +9,7 @@ public class TriggerAngry : MonoBehaviour {
 	Text textArea;
 	Text perfectAnim;
 	private Score playerScore; 
+	public Text score;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,8 @@ public class TriggerAngry : MonoBehaviour {
 		perfectAnim.enabled = false;
 
 		playerScore = GameObject.Find("playerScore").GetComponent<Score> ();
-
+		//score = GameObject.FindGameObjectWithTag ("score").GetComponent<Text> ();
+		playerScore = score.GetComponent<Score> ();
 	}
 
 	// Update is called once per frame
@@ -33,6 +35,7 @@ public class TriggerAngry : MonoBehaviour {
 			perfectAnim.GetComponent<Animation> ().Play();
 
 			playerScore.addScore (10);
+		//	score = playerScore.addScore (49);
 		}
 	}
 }
