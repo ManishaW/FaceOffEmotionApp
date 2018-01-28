@@ -8,11 +8,13 @@ public class TriggerJoy : MonoBehaviour {
 
 	private string expectedResult = "Joy";
 	Text textArea;
+	Text perfectAnim;
 
 	// Use this for initialization
 	void Start () {
 		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
-
+		perfectAnim= GameObject.Find ("textPerfect").GetComponent<Text> ();
+		perfectAnim.enabled = false;
 	}
 
 	// Update is called once per frame
@@ -23,6 +25,8 @@ public class TriggerJoy : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		if (textArea.text.Equals(expectedResult)) {
 			Debug.Log ("It's in bounds! It's" + textArea.text);
+			perfectAnim.enabled = true;
+			perfectAnim.GetComponent<Animation> ().Play();
 		}
 	}
 }
