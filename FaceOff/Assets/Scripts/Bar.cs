@@ -12,8 +12,8 @@ public class Bar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		y1 = -3;
-		y2 = -5.34;
+		y1 = 37.71;
+		y2 = 41.92;
 		expressionEmoji = placeholder.GetComponent<Rigidbody2D>();
 		result = GetComponent<PlayerEmotions>();
 		playerScore = GameObject.FindGameObjectWithTag("score").GetComponent<Score>();
@@ -26,5 +26,9 @@ public class Bar : MonoBehaviour {
 		}
 		//else
 		//	Debug.Log ("It's not :(.");
+	}
+
+	void OnTriggerEnter2D(BoxCollider2D col){
+	
 	}
 }
