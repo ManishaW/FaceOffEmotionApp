@@ -25,7 +25,7 @@ public class Score : NetworkBehaviour {
 	}
 
 	public void addScore(int s){
-		score =+ s;
+		score += s;
 	//	score1.text = "Score: " + score;
 
 	//	CmdScoreUp (score);
