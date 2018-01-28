@@ -5,8 +5,6 @@ using UnityEngine;
 using Affdex;
 
 public class PlayerEmotions : ImageResultsListener {
-
-	private Emotions result;
 	/// <summary>
 	/// Indicates image results are available.
 	/// </summary>
@@ -33,7 +31,6 @@ public class PlayerEmotions : ImageResultsListener {
 				}
 			}
 
-			result = emotions [maxIndex];
 			Text textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
 			textArea.text = emotions[maxIndex].ToString();
 			

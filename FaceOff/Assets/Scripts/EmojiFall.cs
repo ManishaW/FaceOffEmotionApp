@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EmojiFall : MonoBehaviour {
-	string[] emojiTypes = {"joy", "sad", "surprise", "angry" };
 	int[] emojiPosition = { -20, 80, 180, 280 };
 	public GameObject emojiOriginal; 
 	public GameObject emojiInstance; 
@@ -27,7 +26,6 @@ public class EmojiFall : MonoBehaviour {
 	void createEmoji(){
 		int rand = Random.Range(1, 16);
 		position_index = (position_index + rand) % 4;
-		string emoji = emojiTypes [position_index];
 		Vector3 position = new Vector3 (emojiPosition[position_index], 375, 0);
 		emojiInstance = Instantiate (emojiOriginal, position, Quaternion.identity) as GameObject;
 		emojiInstance.GetComponent<SpriteRenderer>().sprite = emojiSprite[position_index];
