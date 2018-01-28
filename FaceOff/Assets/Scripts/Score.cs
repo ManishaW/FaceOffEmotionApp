@@ -17,6 +17,7 @@ public class Score : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
 		score1 = GetComponent<Text> ();
+		score1.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform,false);
 	}
 	
 	// Update is called once per frame
