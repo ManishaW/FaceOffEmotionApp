@@ -16,7 +16,7 @@ public class EmojiFall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//float randTime = Random.Range (1, 3);
-		InvokeRepeating ("createEmoji", 5, Random.Range(2, 3));
+		InvokeRepeating ("createEmoji", 5, Random.Range(1, 3));
 	
 	}
 	// Update is called once per frame
