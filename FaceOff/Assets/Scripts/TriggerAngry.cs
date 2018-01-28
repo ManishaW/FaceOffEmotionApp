@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TriggerAngry : MonoBehaviour {
 
-	private string expectedResult = "Angry";
+	private string expectedResult = "Anger";
 	Text textArea;
 	private Score playerScore; 
 
