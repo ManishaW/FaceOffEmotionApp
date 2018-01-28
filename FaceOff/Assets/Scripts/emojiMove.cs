@@ -11,7 +11,7 @@ public class emojiMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float Hspeed = 90;
+		float Hspeed = 100;
 		transform.Translate(Vector2.down*Hspeed*Time.deltaTime);
 	}
 }
