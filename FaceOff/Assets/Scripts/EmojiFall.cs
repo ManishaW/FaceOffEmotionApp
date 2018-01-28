@@ -22,9 +22,6 @@ public class EmojiFall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(Vector3.down * Time.deltaTime);
-		Text textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
-
-		Debug.Log ("2" + textArea.text );
 	}
 
 	void createEmoji(){
