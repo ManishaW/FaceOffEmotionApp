@@ -17,15 +17,12 @@ public class EmojiFall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//float randTime = Random.Range (1, 3);
-<<<<<<< HEAD
-		InvokeRepeating ("createEmoji", 5, Random.Range(1, 3));
-=======
+
 		AudioListener.pause = false;
 		StartCoroutine ("Countdown", 30);
 		InvokeRepeating ("createEmoji", 5, Random.Range(1, 3));
 		timesUpAnim= GameObject.Find ("timesUp").GetComponent<Text> ();
 		timesUpAnim.enabled = false;
->>>>>>> ec391d8613e75e62b2db935119ff286e4f81f832
 	
 	}
 	// Update is called once per frame
