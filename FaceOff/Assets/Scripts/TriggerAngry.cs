@@ -1,27 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TriggerAngry : MonoBehaviour {
 
-	public PlayerEmotions result;
 	private string expectedResult = "Angry";
+	Text textArea;
 
 	// Use this for initialization
 	void Start () {
-		result = GetComponent<PlayerEmotions>();
+		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		if (result.getResult ().Equals (expectedResult)) {
-			Debug.Log ("It's in bounds! It's" + result.getResult ());
+		if (textArea.text.Equals(expectedResult)) {
+			Debug.Log ("It's in bounds! It's" + textArea.text);
 		}
-		Debug.Log ("Your expression " + result.getResult());
-		Debug.Log ("Increase score.");
 	}
 }
