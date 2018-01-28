@@ -6,11 +6,9 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-
 	public int score;
 
 	Text score1;
-
 
 	// Use this for initialization
 	void Start () {
