@@ -33,6 +33,7 @@ public class PlayerEmotions : ImageResultsListener {
 			}
 
 			result = emotions [maxIndex];
+			
 		}
 	}
 
