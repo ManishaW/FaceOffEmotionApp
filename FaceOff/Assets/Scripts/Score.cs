@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Score : NetworkBehaviour {
 
 
-	//[SyncVar(hook = "addScore")]
+	[SyncVar(hook = "addScore")]
 	public int score = 0;
 
 	Text score1;
