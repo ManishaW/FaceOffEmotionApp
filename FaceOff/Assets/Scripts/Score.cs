@@ -4,18 +4,17 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class Score : NetworkBehaviour {
+public class Score : MonoBehaviour {
 
 
-	[SyncVar(hook = "addScore")]
-	public int score = 0;
+	public int score;
 
 	Text score1;
-	Text score2;
 
 
 	// Use this for initialization
 	void Start () {
+		score = 0;
 		score1 = GetComponent<Text> ();
 	}
 	
@@ -25,24 +24,7 @@ public class Score : NetworkBehaviour {
 	}
 
 	public void addScore(int s){
-		score =+ s;
-	//	score1.text = "Score: " + score;
-
-		CmdScoreUp (score);
-	}
-
-	[Command]
-	public void CmdScoreUp(int s){
-		RpcScoreUp (s);
-	}
-
-	[ClientRpc]
-	public void RpcScoreUp(int s){
-
-		if (!isLocalPlayer) {
-			score = s;
-			score2.text = s.ToString ();
-		}
+		score += s;
 	}
 
 }

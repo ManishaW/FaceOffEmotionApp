@@ -7,11 +7,13 @@ public class TriggerSurprise : MonoBehaviour {
 
 	private string expectedResult = "Surprise";
 	Text textArea;
+	private Score playerScore; 
 
 	// Use this for initialization
 	void Start () {
 		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
-
+		GameObject playerScoreObject = GameObject.FindWithTag("score");
+		playerScore = playerScoreObject.GetComponent<Score>();
 	}
 
 	// Update is called once per frame
@@ -21,7 +23,7 @@ public class TriggerSurprise : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		if (textArea.text.Equals(expectedResult)) {
-			Debug.Log ("It's in bounds! It's" + textArea.text);
+			playerScore.addScore (10);
 		}
 	}
 }
