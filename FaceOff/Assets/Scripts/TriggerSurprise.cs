@@ -8,7 +8,11 @@ public class TriggerSurprise : MonoBehaviour {
 	private string expectedResult = "Surprise";
 	Text textArea;
 	Text perfectAnim;
-	private Score playerScore; 
+	
+	public GameObject placeholder;
+	private Rigidbody2D expressionEmoji;
+	public Text score;
+	private Score playerScore;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +22,7 @@ public class TriggerSurprise : MonoBehaviour {
 
 		perfectAnim= GameObject.Find ("textPerfect").GetComponent<Text> ();
 		perfectAnim.enabled = false;
+
 	}
 
 	// Update is called once per frame
