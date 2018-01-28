@@ -22,7 +22,6 @@ public class Bar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (expressionEmoji.position.y < y1 && expressionEmoji.position.y > y2) {
-			Debug.Log ("It's in bounds! It's" + result.getResult ());
 			playerScore.addScore (10);
 		}
 		//else

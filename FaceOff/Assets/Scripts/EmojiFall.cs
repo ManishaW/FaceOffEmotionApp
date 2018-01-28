@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EmojiFall : MonoBehaviour {
 	string[] emojiTypes = {"joy", "sad", "surprise", "angry" };
@@ -9,6 +10,7 @@ public class EmojiFall : MonoBehaviour {
 	public GameObject emojiInstance; 
 	public Sprite [] emojiSprite;
 	private int position_index = 0;
+
 
 
 	// Use this for initialization
@@ -20,6 +22,9 @@ public class EmojiFall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(Vector3.down * Time.deltaTime);
+		Text textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
+
+		Debug.Log ("2" + textArea.text );
 	}
 
 	void createEmoji(){

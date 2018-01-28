@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using Affdex;
 
@@ -33,13 +34,10 @@ public class PlayerEmotions : ImageResultsListener {
 			}
 
 			this.result= emotions [maxIndex];
+			Text textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
+			textArea.text = emotions[maxIndex].ToString();
 			
 		}
-	}
-
-	public Emotions getResult(){
-		Debug.Log ("111" + this.result);
-		return this.result; 
 	}
 
 
