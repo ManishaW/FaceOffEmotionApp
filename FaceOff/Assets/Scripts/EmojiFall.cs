@@ -14,7 +14,7 @@ public class EmojiFall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//float randTime = Random.Range (1, 3);
-		InvokeRepeating ("createEmoji", 5, Random.Range(2, 5));
+		InvokeRepeating ("createEmoji", 5, Random.Range(2, 3));
 	
 	}
 	// Update is called once per frame
@@ -30,6 +30,7 @@ public class EmojiFall : MonoBehaviour {
 		Vector3 position = new Vector3 (emojiPosition[position_index], 375, 0);
 		emojiInstance = Instantiate (emojiOriginal, position, Quaternion.identity) as GameObject;
 		emojiInstance.GetComponent<SpriteRenderer>().sprite = emojiSprite[position_index];
+		
 
 
 					
