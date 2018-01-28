@@ -5,7 +5,7 @@ using Affdex;
 
 public class PlayerEmotions : ImageResultsListener {
 
-	public Emotions result;
+	private Emotions result;
 	/// <summary>
 	/// Indicates image results are available.
 	/// </summary>
@@ -36,6 +36,11 @@ public class PlayerEmotions : ImageResultsListener {
 			
 		}
 	}
+
+	public Emotions getResult(){
+		return result; 
+	}
+
 
 	/// <summary>
 	/// Indicates that the face detector has started tracking a new face.
