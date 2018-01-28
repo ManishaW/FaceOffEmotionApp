@@ -16,7 +16,7 @@ public class Bar : MonoBehaviour {
 		y2 = -5.34;
 		expressionEmoji = placeholder.GetComponent<Rigidbody2D>();
 		result = GetComponent<PlayerEmotions>();
-		playerScore = GameObject.FindGameObjectWithTag("score").GetComponent<Score>();
+		playerScore = GameObject.FindGameObjectWithTag ("score").GetComponent<Score> ();
 	}
 	
 	// Update is called once per frame
