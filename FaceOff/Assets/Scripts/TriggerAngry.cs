@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class TriggerAngry : MonoBehaviour {
 
-	private string expectedResult = "Angry";
+	private string expectedResult = "Anger";
 	Text textArea;
+	private Score playerScore; 
 
 	// Use this for initialization
 	void Start () {
 		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
+		playerScore = GameObject.Find("playerScore").GetComponent<Score> ();
 
 	}
 
@@ -22,6 +24,7 @@ public class TriggerAngry : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		if (textArea.text.Equals(expectedResult)) {
 			Debug.Log ("It's in bounds! It's" + textArea.text);
+			playerScore.addScore (10);
 		}
 	}
 }
