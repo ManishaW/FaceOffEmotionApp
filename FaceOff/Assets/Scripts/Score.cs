@@ -20,13 +20,13 @@ public class Score : NetworkBehaviour {
 	}
 	
 	// Update is called once per frame
-//	void Update () {
-//		score1.text = "Score: " + score;
-//	}
+	void Update () {
+		score1.text = "Score: " + score;
+	}
 
 	public void addScore(int s){
 		score =+ s;
-		score1.text = "Score: " + score;
+	//	score1.text = "Score: " + score;
 
 		CmdScoreUp (score);
 	}
