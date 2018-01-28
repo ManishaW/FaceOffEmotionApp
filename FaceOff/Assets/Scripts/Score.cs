@@ -5,9 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
-
 	public int score;
-
 	Text score1;
 
 	// Use this for initialization
@@ -24,5 +22,4 @@ public class Score : MonoBehaviour {
 	public void addScore(int s){
 		score += s;
 	}
-
 }
