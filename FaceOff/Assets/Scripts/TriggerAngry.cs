@@ -5,15 +5,20 @@ using UnityEngine.UI;
 
 public class TriggerAngry : MonoBehaviour {
 
-	private string expectedResult = "Angry";
+	private string expectedResult = "Anger";
 	Text textArea;
 	Text perfectAnim;
+	private Score playerScore; 
 
 	// Use this for initialization
 	void Start () {
 		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
+
 		perfectAnim= GameObject.Find ("textPerfect").GetComponent<Text> ();
 		perfectAnim.enabled = false;
+
+		playerScore = GameObject.Find("playerScore").GetComponent<Score> ();
+
 	}
 
 	// Update is called once per frame
@@ -28,6 +33,7 @@ public class TriggerAngry : MonoBehaviour {
 			perfectAnim.enabled = true;
 			perfectAnim.GetComponent<Animation> ().Play();
 
+			playerScore.addScore (10);
 		}
 	}
 }

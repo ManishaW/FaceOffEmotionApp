@@ -7,22 +7,42 @@ using UnityEngine.UI;
 public class Score : NetworkBehaviour {
 
 
-	[SyncVar(hook = "addScore")]
+	//[SyncVar(hook = "addScore")]
 	public int score = 0;
 
-	Text txt;
+	Text score1;
+	Text score2;
+
 
 	// Use this for initialization
 	void Start () {
-		txt = GetComponent<Text> ();
+		score1 = GetComponent<Text> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		txt.text = "Score: " + score;
+		score1.text = "Score: " + score;
 	}
 
 	public void addScore(int s){
 		score =+ s;
+	//	score1.text = "Score: " + score;
+
+		CmdScoreUp (score);
 	}
+
+	[Command]
+	public void CmdScoreUp(int s){
+		RpcScoreUp (s);
+	}
+
+	[ClientRpc]
+	public void RpcScoreUp(int s){
+
+		if (!isLocalPlayer) {
+			score = s;
+			score2.text = s.ToString ();
+		}
+	}
+
 }
