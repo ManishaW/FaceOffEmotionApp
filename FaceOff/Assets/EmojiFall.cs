@@ -11,52 +11,36 @@ public class EmojiFall : MonoBehaviour {
 	private int position_index = 0;
 	Text timesUpAnim;
 	Text perfectAnim;
+	Text textArea;
 
-
+	public GameObject placeholder;
+	private Rigidbody2D expressionEmoji;
+	public Text score;
+	private Score playerScore;
 
 	// Use this for initialization
 	void Start () {
-		//float randTime = Random.Range (1, 3);
+		textArea = GameObject.Find ("EmotionDisplay").GetComponent<Text> ();
 
-		AudioListener.pause = false;
-		StartCoroutine ("Countdown", 30);
-		InvokeRepeating ("createEmoji", 5, Random.Range(1, 3));
-		timesUpAnim= GameObject.Find ("timesUp").GetComponent<Text> ();
-		timesUpAnim.enabled = false;
-	
+		perfectAnim= GameObject.Find ("textPerfect").GetComponent<Text> ();
+		perfectAnim.enabled = false;
+
+		playerScore = GameObject.FindGameObjectWithTag ("score").GetComponent<Score> ();
+		expressionEmoji = placeholder.GetComponent<Rigidbody2D> ();
 	}
+
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(Vector3.down * Time.deltaTime);
+
 	}
 
-	private IEnumerator Countdown(int time){
-		while (time > 0) {
-			Debug.Log (time--);
-			yield return new WaitForSeconds (1);
+	void OnTriggerEnter2D(Collider2D col){
+		if (textArea.text.Equals(expectedResult) && col.gameObject.tag.Equals("moji")){
+			Debug.Log ("It's in bounds! It's" + textArea.text);
+			perfectAnim.enabled = true;
+			perfectAnim.GetComponent<Animation> ().Play();
+
+			playerScore.addScore (10);
 		}
-		if (time == 0) {
-			CancelInvoke ();
-			perfectAnim= GameObject.Find ("textPerfect").GetComponent<Text> ();
-			perfectAnim.enabled = false;
-			timesUpAnim.enabled = true;
-			timesUpAnim.GetComponent<Animation> ().Play();
-			AudioListener.pause = true;
-			Debug.Log ("Time's up!");
-		}
-	}
-
-	void createEmoji(){
-		int rand = Random.Range(1, 16);
-		position_index = (position_index + rand) % 4;
-		Vector3 position = new Vector3 (emojiPosition[position_index], 375, 0);
-		emojiInstance = Instantiate (emojiOriginal, position, Quaternion.identity) as GameObject;
-		emojiInstance.GetComponent<SpriteRenderer>().sprite = emojiSprite[position_index];
-		
-
-
-					
-
-
 	}
 }
